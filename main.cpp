@@ -1,3 +1,4 @@
+#include <algorithm>
 #include <iostream>
 #include <stdlib.h>
 #include <vector>
@@ -18,8 +19,7 @@ using namespace io;
 #define FEE_INTERNAL_CALL 1.5
 #define FEE_INTERNAL_SMS 1.0
 #define FREE_MINUTES 100
-#define FREE_NUMBER1 "+420732563345"
-#define FREE_NUMBER2 "+420707325673"
+#define FREE_NUMBERS "+420732563345", "+420707325673"
 #define FREE_SMS 10
 #define MONTHLY_FEE 900
 
@@ -37,6 +37,14 @@ public:
     int duration;
     EntryType type;
 };
+
+class Free
+{
+public:
+   static vector<string> numbers;
+};
+
+vector<string> Free::numbers = {FREE_NUMBERS};
 
 class CallStatistics
 {
@@ -132,10 +140,20 @@ vector<Entry> retrieveData(const char* filePath)
 CallStatistics collectStatistics(vector<Entry> data)
 {
     CallStatistics stats;
-    int callTime = 0;
-    int smss = 0;
+    float freeMinutes = FREE_MINUTES;
+    float freeSMS = FREE_SMS;
+
     for (auto item: data)
     {
+        if (find(Free::numbers.begin(), Free::numbers.end(), item.number)
+                != Free::numbers.end())
+        {
+            // Numbers free of charge
+            cout << "Number: " << item.number << " duration: " << item.duration << endl;
+        }
+        else
+        {
+        }
     }
     return stats;
 }
@@ -143,6 +161,7 @@ CallStatistics collectStatistics(vector<Entry> data)
 int main()
 {
     auto data = retrieveData("data/data.csv");
+    auto statistics = collectStatistics(data);
 
     return 0;
 }
