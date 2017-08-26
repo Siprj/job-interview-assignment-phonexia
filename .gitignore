@@ -32,3 +32,6 @@
 *.app
 
 Makefile
+
+bin/
+build/
