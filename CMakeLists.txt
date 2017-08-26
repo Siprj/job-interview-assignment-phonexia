@@ -11,6 +11,6 @@ find_package(Threads REQUIRED)
 
 SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 
-include_directories(${PROJECT_SOURCE_DIR}/fast-cpp-csv-parser)
+include_directories(${PROJECT_SOURCE_DIR}/lib/fast-cpp-csv-parser)
 
 add_subdirectory(src)
