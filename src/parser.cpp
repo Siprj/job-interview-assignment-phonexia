@@ -44,23 +44,27 @@ vector<Entry> retrieveData(const char* filePath)
         entry.number = number;
         entry.duration = duration;
 
-        if (stringifiedType.compare(INTERNAL_CALL_STR))
+        if (stringifiedType.compare(INTERNAL_CALL_STR) == 0)
         {
+            cout << "asdf1" << endl;
             entry.channelType = Call;
             entry.destinationType = Internal;
         }
-        else if (stringifiedType.compare(EXTERNAL_CALL_STR))
+        else if (stringifiedType.compare(EXTERNAL_CALL_STR) == 0)
         {
+            cout << "asdf2" << endl;
             entry.channelType = Call;
             entry.destinationType = External;
         }
-        else if (stringifiedType.compare(INTERNAL_SMS_STR))
+        else if (stringifiedType.compare(INTERNAL_SMS_STR) == 0)
         {
+            cout << "asdf3" << endl;
             entry.channelType = SMS;
             entry.destinationType = Internal;
         }
-        else if (stringifiedType.compare(EXTERNAL_SMS_STR))
+        else if (stringifiedType.compare(EXTERNAL_SMS_STR) == 0)
         {
+            cout << "asdf4" << endl;
             entry.channelType = SMS;
             entry.destinationType = External;
         }
