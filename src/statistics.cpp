@@ -8,6 +8,23 @@
 
 using namespace std;
 
+bool CallStatistics::operator == (const CallStatistics &b) const
+{
+    // floats shouldn't be compared like this bu for the sake of test...
+    return
+        ( this->totalCost == b.totalCost
+        && this->internalCallTime == b.internalCallTime
+        && this->internalCallCost == b.internalCallCost
+        && this->externalCallTime == b.externalCallTime
+        && this->externalCallCost == b.externalCallCost
+        && this->internalSMSAmount == b.internalSMSAmount
+        && this->internalSMSCost == b.internalSMSCost
+        && this->externalSMSAmount == b.externalSMSAmount
+        && this->externalSMSCost == b.externalSMSCost
+        && this->calls == b.calls
+        );
+}
+
 int rampSeconds(int secs)
 {
     if (secs < 60)

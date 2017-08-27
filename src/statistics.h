@@ -32,6 +32,8 @@ public:
     int externalSMSAmount;
     float externalSMSCost;
     int calls;
+
+    bool operator == (const CallStatistics &b) const;
 };
 
 extern CallStatistics collectStatistics(std::vector<Entry> data);

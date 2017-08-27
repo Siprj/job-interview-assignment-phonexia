@@ -10,6 +10,8 @@ set(HDR
     statistics.h
 )
 
+include_directories(${PROJECT_SOURCE_DIR}/lib/fast-cpp-csv-parser)
+
 add_library(${CMAKE_PROJECT_NAME}-lib STATIC ${SRC} ${HDR})
 
 add_executable(${CMAKE_PROJECT_NAME} main.cpp)
