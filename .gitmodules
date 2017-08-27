@@ -1,6 +1,9 @@
-[submodule "lib/fast-cpp-csv-parser"]
-	path = lib/fast-cpp-csv-parser
-	url = git@github.com:Siprj/fast-cpp-csv-parser.git
 [submodule "lib/Catch"]
 	path = lib/Catch
-	url = git@github.com:Siprj/Catch.git
+	url = https://github.com/Siprj/Catch.git
+[submodule "lib/fast-cpp-csv-parser"]
+	path = lib/fast-cpp-csv-parser
+	url = https://github.com/Siprj/fast-cpp-csv-parser.git
+[submodule "lib/cmdline"]
+	path = lib/cmdline
+	url = https://github.com/Siprj/cmdline.git
