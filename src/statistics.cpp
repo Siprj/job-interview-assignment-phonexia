@@ -29,7 +29,6 @@ CallStatistics collectStatistics(vector<Entry> data)
                 != Free::numbers.end())
         {
             // Numbers free of charge
-            cout << "Number: " << item.number << " duration: " << item.duration << endl;
             switch (item.channelType)
             {
             case Call:
