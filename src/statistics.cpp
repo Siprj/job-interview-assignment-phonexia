@@ -2,6 +2,7 @@
 
 #include <algorithm>
 #include <iostream>
+#include <sstream>
 
 #include "constants.h"
 
@@ -168,4 +169,20 @@ CallStatistics collectStatistics(vector<Entry> data)
         + statistics.externalSMSCost;
 
     return statistics;
+}
+
+extern string pretty(CallStatistics statistics)
+{
+    ostringstream os;
+    os << "Monthly fee: " << MONTHLY_FEE << endl;
+    os << "Number of calls: " << statistics.calls << endl;
+    os << "Number of SMSs: " << statistics.internalSMSAmount
+        + statistics.externalSMSAmount << endl;
+    os << "Total cost: " << statistics.totalCost << endl;
+
+    os << "Call cost: " << statistics.internalCallCost
+        + statistics.externalCallCost << endl;
+    os << "SMS cost: " << statistics.internalSMSCost
+        + statistics.externalSMSCost << endl;
+    return os.str();
 }

@@ -37,3 +37,4 @@ public:
 };
 
 extern CallStatistics collectStatistics(std::vector<Entry> data);
+extern std::string pretty(CallStatistics statistics);
