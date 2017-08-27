@@ -11,6 +11,7 @@ set(HDR
 )
 
 include_directories(${PROJECT_SOURCE_DIR}/lib/fast-cpp-csv-parser)
+include_directories(${PROJECT_SOURCE_DIR}/lib/cmdline)
 
 add_library(${CMAKE_PROJECT_NAME}-lib STATIC ${SRC} ${HDR})
 
