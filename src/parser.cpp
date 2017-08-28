@@ -11,7 +11,7 @@ using namespace io;
 
 vector<Entry> retrieveData(const char* filePath)
 {
-    // Instantiate CSV reader with three active columns and
+    // Instantiate CSV reader with three active columns
     CSVReader
         < 3
         , trim_chars<' ', '\t'>

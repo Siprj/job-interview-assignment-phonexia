@@ -11,7 +11,7 @@ using namespace std;
 
 bool CallStatistics::operator == (const CallStatistics &b) const
 {
-    // floats shouldn't be compared like this bu for the sake of test...
+    // floats shouldn't be compared like this but for the sake of test...
     return
         ( this->totalCost == b.totalCost
         && this->internalCallTime == b.internalCallTime
