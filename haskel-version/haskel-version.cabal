@@ -1,0 +1,70 @@
+name:                haskel-version
+version:             0.1.0.0
+-- synopsis:
+-- description:
+homepage:            https://github.com/githubuser/haskel-version#readme
+license:             MIT
+license-file:        LICENSE
+author:              Author name here
+maintainer:          example@example.com
+copyright:           2017 Author name here
+category:            Web
+build-type:          Simple
+-- extra-source-files:  README.md
+cabal-version:       >=1.10
+
+library
+  hs-source-dirs:      src
+  exposed-modules:
+      Type.SessionEntry
+      Type.Statistics
+      App
+      Constants
+  build-depends:
+      base >= 4.7 && < 5
+    , bytestring
+    , cassava
+    , text
+    , vector
+
+  ghc-options:
+    -Wall
+    -Werror
+    -fwarn-tabs
+    -fwarn-implicit-prelude
+  default-language:    Haskell2010
+
+executable job-interview-assignment-phonexia
+  hs-source-dirs:      app
+  main-is:             Main.hs
+  ghc-options:
+    -threaded
+    -rtsopts
+    -with-rtsopts=-N
+    -Wall
+    -Werror
+    -fwarn-tabs
+    -fwarn-implicit-prelude
+  build-depends:       base
+                     , haskel-version
+  default-language:    Haskell2010
+
+test-suite haskel-version-test
+  type:                exitcode-stdio-1.0
+  hs-source-dirs:      test
+  main-is:             Spec.hs
+  build-depends:       base
+                     , haskel-version
+  ghc-options:
+    -threaded
+    -rtsopts
+    -with-rtsopts=-N
+    -Wall
+    -Werror
+    -fwarn-tabs
+    -fwarn-implicit-prelude
+  default-language:    Haskell2010
+
+source-repository head
+  type:     git
+  location: https://github.com/githubuser/haskel-version
