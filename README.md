@@ -1,5 +1,11 @@
 # Build instruction
 
+Repository uses git submodules, so don't forget to fetch them:
+
+```bash
+git submodule update --init --recursive
+```
+
 Inside repository run:
 
 ```bash
@@ -9,7 +15,7 @@ Inside repository run:
 This will create binary `bin/job-interview-assignment-phonexia` relative to
 repository root.
 
-# Runnig the app
+# Running the app
 
 Application expect CSV file with data as argument. To use data file delivered
 with repository, run:
