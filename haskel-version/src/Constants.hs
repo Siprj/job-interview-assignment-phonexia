@@ -10,14 +10,15 @@ import Data.Text
 
 feeExternalCall, feeExternalSms, feeInternalCall, feeInternalSms, monthlyFee
     :: Float
-freeMinutes, freeSmss :: Int
-freeNumbers :: [Text]
-
 feeExternalCall = (3.5 / 60.0)
 feeExternalSms = 2.0
 feeInternalCall = (1.5 / 60.0)
 feeInternalSms = 1.0
-freeMinutes = 100
-freeNumbers = ["+420732563345", "+420707325673"]
-freeSmss = 10
 monthlyFee = 900
+
+freeMinutes, freeSmss :: Int
+freeMinutes = 100
+freeSmss = 10
+
+freeNumbers :: [Text]
+freeNumbers = ["+420732563345", "+420707325673"]
