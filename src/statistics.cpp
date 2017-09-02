@@ -174,15 +174,23 @@ CallStatistics collectStatistics(vector<Entry> data)
 extern string pretty(CallStatistics statistics)
 {
     ostringstream os;
-    os << "Monthly fee: " << MONTHLY_FEE << endl;
+    os << "Monthly fee [-]: " << MONTHLY_FEE << endl;
+    os << "Total cost[-]: " << statistics.totalCost << endl;
     os << "Number of calls: " << statistics.calls << endl;
-    os << "Number of SMSs: " << statistics.internalSMSAmount
-        + statistics.externalSMSAmount << endl;
-    os << "Total cost: " << statistics.totalCost << endl;
-
-    os << "Call cost: " << statistics.internalCallCost
+    os << "Total call cost [-]: " << statistics.internalCallCost
         + statistics.externalCallCost << endl;
-    os << "SMS cost: " << statistics.internalSMSCost
+    os << "Total number of SMSs [-]: " << statistics.internalSMSAmount
+        + statistics.externalSMSAmount << endl;
+    os << "Total SMS cost [-]: " << statistics.internalSMSCost
         + statistics.externalSMSCost << endl;
+    os << "Internal call time [min]: " << statistics.internalCallTime / 60 << endl;
+    os << "Internal call cost [-]: " << statistics.internalCallCost << endl;
+    os << "Internal SMS amount [-]: " << statistics.internalSMSAmount << endl;
+    os << "Internal SMS cost: [-]" << statistics.internalSMSCost << endl;
+    os << "External Call time [min]: " << statistics.externalCallTime / 60  << endl;
+    os << "External Call cost [-]: " << statistics.externalCallCost << endl;
+    os << "External SMSs amount [-]: " << statistics.externalSMSAmount << endl;
+    os << "External SMS cost [-]: " << statistics.externalSMSCost << endl;
+
     return os.str();
 }
